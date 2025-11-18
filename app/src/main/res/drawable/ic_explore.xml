@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Outer ring -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M12,3
+                          a9,9 0 1,0 0,18
+                          a9,9 0 1,0 0,-18z"/>
+
+    <!-- Degree markers (N,E,S,W small ticks) -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="1.0"
+        android:strokeLineCap="round"
+        android:pathData="M12,3.8 L12,5.2
+                          M20.2,12 L18.8,12
+                          M12,20.2 L12,18.8
+                          M5.2,12 L6.6,12"/>
+
+    <!-- Needle: two-tone: north (filled) and south (outlined) -->
+    <!-- North needle (pointing approx NE) -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M12,6.2 L15.2,13.0 L12,11.0 L8.8,13.0 z"
+        android:strokeColor="@android:color/transparent"/>
+
+    <!-- South needle (subtle outline to balance) -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="1.0"
+        android:strokeLineJoin="round"
+        android:pathData="M12,17.8 L15.2,11.0 L12,13.0 L8.8,11.0 z"/>
+
+    <!-- Center pivot -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="0.8"
+        android:pathData="M12,11.6
+                          a0.8,0.8 0 1,0 0,1.6
+                          a0.8,0.8 0 1,0 0,-1.6z"/>
+</vector>
