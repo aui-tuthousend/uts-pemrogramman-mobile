@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">uts_mobile</string>
+    <string name="search">Search</string>
+    <string name="international_band_music_festival_with_many_other_things">International Band Music Festival with Many Other Things</string>
 </resources>

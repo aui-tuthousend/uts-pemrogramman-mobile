@@ -3,16 +3,16 @@
     <item
         android:id="@+id/navigation_explore"
         android:icon="@drawable/ic_explore"
-        android:title="Explore" />
+        android:title="Schedule" />
     <item
         android:id="@+id/navigation_your_event"
         android:icon="@drawable/ic_your_event"
-        android:title="Your Event" />
+        android:title="Vendor" />
 
     <item
         android:id="@+id/navigation_friends"
         android:icon="@drawable/ic_notification"
-        android:title="Notifications" />
+        android:title="Blacklist" />
 
     <item
         android:id="@+id/navigation_profile"

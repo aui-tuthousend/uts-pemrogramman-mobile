@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.uts_mobile.feature.vendor.ui.VendorFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,9 +32,8 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
 
-        // Load default fragment
         if (savedInstanceState == null) {
-            loadFragment(new ExploreFragment());
+            loadFragment(new ScheduleFragment());
         }
     }
 
@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment = null;
 
         if (item.getItemId() == R.id.navigation_explore) {
-            fragment = new ExploreFragment();
+            fragment = new ScheduleFragment();
         } else if (item.getItemId() == R.id.navigation_friends) {
-            fragment = new FriendsFragment();
+            fragment = new BlacklistFragment();
         } else if (item.getItemId() == R.id.navigation_your_event) {
-            fragment = new YourEventFragment();
+            fragment = new VendorFragment();
         } else if (item.getItemId() == R.id.navigation_profile) {
             fragment = new ProfileFragment();
         }
