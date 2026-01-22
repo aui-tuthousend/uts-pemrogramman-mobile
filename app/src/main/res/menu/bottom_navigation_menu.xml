@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/navigation_explore"
-        android:icon="@drawable/ic_explore"
+        android:id="@+id/navigation_schedule"
+        android:icon="@drawable/ic_your_event"
         android:title="Schedule" />
     <item
-        android:id="@+id/navigation_your_event"
-        android:icon="@drawable/ic_your_event"
+        android:id="@+id/navigation_vendor"
+        android:icon="@drawable/ic_explore"
         android:title="Vendor" />
 
     <item
-        android:id="@+id/navigation_friends"
-        android:icon="@drawable/ic_notification"
-        android:title="Blacklist" />
+        android:id="@+id/navigation_truck"
+        android:icon="@drawable/ic_truck"
+        android:title="Truck" />
 
     <item
-        android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_profile"
-        android:title="Profile" />
+        android:id="@+id/navigation_driver"
+        android:icon="@drawable/ic_profile_circle"
+        android:title="Driver" />
 </menu>

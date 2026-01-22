@@ -1,6 +1,8 @@
 package com.example.uts_mobile.feature.vendor.dto;
 
-public class Vendor {
+import java.io.Serializable;
+
+public class Vendor implements Serializable {
     private String id;
     private String code;
     private String name;
@@ -10,6 +12,7 @@ public class Vendor {
     private boolean is_active;
 
     public Vendor() {}
+    public String getId() { return id; }
     public String getName() { return name; }
     public String getCode() { return code; }
     public String getAddress() { return address; }

@@ -12,6 +12,15 @@ import java.util.List;
 public class VendorAdapter extends RecyclerView.Adapter<VendorAdapter.VendorViewHolder> {
 
     private List<Vendor> vendorList;
+    private OnItemClickListener listener;
+
+    public interface OnItemClickListener {
+        void onItemClick(Vendor vendor);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
 
     public VendorAdapter(List<Vendor> vendorList) {
         this.vendorList = vendorList;
@@ -51,6 +60,14 @@ public class VendorAdapter extends RecyclerView.Adapter<VendorAdapter.VendorView
         holder.code.setText(currentVendor.getCode());
         holder.address.setText(currentVendor.getAddress());
         holder.contact.setText(currentVendor.getContact_person());
+
+
+
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(currentVendor);
+            }
+        });
 
     }
 

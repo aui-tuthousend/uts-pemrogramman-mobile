@@ -22,6 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".feature.driver.ui.CreateDriverActivity"/>
+        <activity android:name=".feature.vendor.ui.CreateVendorActivity"/>
+        <activity android:name=".feature.truck.ui.CreateTruckActivity"/>
+        <activity android:name=".feature.schedule.ui.CreateScheduleActivity"/>
     </application>
 
 </manifest>

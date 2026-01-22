@@ -1,5 +1,6 @@
 package com.example.uts_mobile.feature.vendor.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,8 +41,19 @@ public class VendorFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_vendor, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerViewVendors);
+        View btnAddVendor = view.findViewById(R.id.btnAddVendor);
+
+        btnAddVendor.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), CreateVendorActivity.class);
+            startActivity(intent);
+        });
 //
         adapter = new VendorAdapter(vendorDataList);
+        adapter.setOnItemClickListener(vendor -> {
+            Intent intent = new Intent(getActivity(), CreateVendorActivity.class);
+            intent.putExtra("vendor", vendor);
+            startActivity(intent);
+        });
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
 
@@ -50,7 +62,17 @@ public class VendorFragment extends Fragment {
         return view;
     }
 
+    public void refreshData() {
+        vendorDataList.clear();
+        fetchVendorData();
+    }
+
     private void fetchVendorData() {
+        if (!vendorDataList.isEmpty()) {
+            Log.d(TAG, "Data sudah ada di cache, skip fetch.");
+            return;
+        }
+
         Call<VendorResponse> call = RetrofitClient
                 .getInstance()
                 .getVendorApiService()
@@ -64,9 +86,6 @@ public class VendorFragment extends Fragment {
                     if (vendorResponse != null) {
                         List<Vendor> vendors = vendorResponse.getData();
                         Log.d(TAG, "Data Vendors berhasil difetch. Jumlah: " + vendors.size());
-
-                        // TODO: Update RecyclerView Adapter di sini
-                        // Misalnya: vendorAdapter.updateVendors(vendors);
 
                         adapter.setVendors(vendors);
 
